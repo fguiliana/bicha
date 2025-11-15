@@ -1,0 +1,18 @@
+{
+  "name": "fludo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fguiliana/fludo.git",
+  "author": "Florent Guiliana <florent.guiliana@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "minify:css": "cleancss -o dist/style.min.css src/style.css",
+    "minify:js": "uglifyjs src/script.js -o dist/script.min.js",
+    "minify:html": "./node_modules/.bin/html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags -o dist/index.html src/index.html"
+  },
+  "dependencies": {
+    "clean-css-cli": "^5.6.3",
+    "html-minifier-terser": "^7.2.0",
+    "uglify-js": "^3.19.3"
+  }
+}
