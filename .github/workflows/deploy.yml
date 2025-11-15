@@ -1,0 +1,52 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Étape 1 : Récupérer le code source
+    - name: Checkout the code
+      uses: actions/checkout@v4
+
+    # Étape 2 : Configurer Node.js en version 18
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    # Étape 3 : Installer les dépendances
+    - name: Install dependencies
+      run: yarn install
+
+    # Étape 4 : Construire le projet
+    - name: Build the project
+      run: |
+        yarn minify:css
+        yarn minify:js
+        yarn minify:html
+
+    # Étape 5 : Copier le dossier media et tdmrep.json dans dist
+    - name: Copy media folder and others
+      run: |
+        cp -R src/media dist/media
+        cp src/tdmrep.json dist/tdmrep.json
+        cp src/terms.html dist/terms.html
+        cp src/mentions.html dist/mentions.html
+        cp src/.htaccess dist/.htaccess
+
+    # Étape 6 : Déployer sur GitHub Pages
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        publish_branch: kinsta
+        exclude_assets: |
+            .gitignore
+            .nojekyll
