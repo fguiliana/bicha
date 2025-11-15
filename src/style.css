@@ -1,0 +1,426 @@
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&display=swap');
+@import 'styles/reset.css';
+@import 'styles/accordion.css';
+@import 'styles/slideshow.css';
+
+/* Fonts imports */
+@font-face {
+    font-family: 'ArchivoBlack';
+    src: url('/media/fonts/ArchivoBlack.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GrandBold';
+    src: url('/media/fonts/GrandBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HankenGrotesk';
+    src: url('/media/fonts/HankenGrotesk.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Questrial';
+    src: url('/media/fonts/Questrial.ttf') format('truetype');
+}
+
+
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* Typography */
+body {
+    background-color: #f8d6a9;
+    font-family: 'HankenGrotesk';
+    font-size: 16px;
+}
+
+strong {
+    font-weight: 600;
+    /* font-style: bold !important; */
+}
+  
+/* Container */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.intro {
+    border: 1px solid;
+    margin: 0 20px;
+}
+
+.noel {
+    background-color: #334A39;
+    color: white !important;
+}
+
+.hidden {
+    display: none;
+}
+
+  /* Global Styles */
+header, nav, section, footer {
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 15px;
+}
+
+button {
+    box-shadow: 5px 5px #C26963;
+    background-color: #fff;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-family: 'Antonio';
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    color: rgb(0, 0, 0);
+    border: 1px solid #333;
+}
+
+button:hover {
+    background-color: #fbfcc5;
+    cursor: pointer;
+}
+
+button:focus {
+    position: relative;
+    left: 5px;
+    top: 5px;
+    box-shadow: unset;
+}
+
+.progress-indicator__icon {
+    position: relative;
+    height: 15px;
+}
+
+input {
+    width: 100% !important;
+    margin-top: 10px;
+    border: 1px solid #000;
+    padding: 12.5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    font-family: 'Open Sans';
+    font-size: inherit;
+}
+
+li {
+    list-style: inside;
+}
+
+#error-message, #success-message {
+    margin-bottom: 5px;
+}
+
+img#logo {
+    margin: 15px 0;
+}
+
+section.block {
+    text-align: left;
+    margin-top: 20px;
+}
+
+div {
+    line-height: normal;
+}
+
+h1 {
+    line-height: 1.6;
+    font-family: 'Antonio';
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+h2 {
+    line-height: 1.6;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: -0.5px;
+}
+
+h3 {
+    font-weight: 600;
+    font-family: 'Antonio';
+    text-transform: uppercase;
+}
+
+p.slogan {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-style: condensed;
+    letter-spacing: -0.5px;
+}
+
+div.divider {
+    height: 1px;
+    margin: 20px 20px 0px 20px;
+    background-color: #333;
+}
+
+div.divider2 {
+    height: 0px;
+    margin: 20px 20px 0px 20px;
+}
+
+a.address {
+    font-style: oblique;
+    color: black;
+}
+
+a.button {
+    box-shadow: 5px 5px #C26963;
+    margin-top: 20px;
+    padding: 10px;
+    font-family: 'Antonio';
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    color: rgb(0, 0, 0);
+    border: 1px solid #333;
+}
+
+a.button:active {
+    position: relative;
+    left: 5px;
+    top: 5px;
+    box-shadow: unset;
+}
+
+  
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: black; /* Couleur initiale des icônes */
+    font-size: 20px;
+    margin: 10px 10px; /* Espacement entre les icônes */
+    transition: color 0.3s ease; /* Transition pour l'effet d'hover */
+}
+
+.social-icons a:hover {
+    color: #C26963; /* Couleur du logo du site (à personnaliser) */
+}
+
+.soon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+.soon img {
+        height: 50%;
+        margin-right: 30px;
+    }
+  
+/* Breakpoints */
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+    body {
+      font-size: 14px;
+    }
+
+    button {
+        font-size: 15px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    img#logo {
+        width: 200px;
+    }    
+        
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+    
+    .container {
+      padding: 0 10px;
+    }
+
+    a.button, h3 {
+        font-size: 15px;
+    }
+}
+  
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    body {
+      font-size: 15px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    input {
+        font-size: 15px;
+    }
+
+    img#logo {
+        width: 300px;
+    }    
+        
+    h1 {
+        font-size: 32px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+  
+    a.button, h3 {
+        font-size: 16px;
+    }
+  
+}
+  
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    body {
+      font-size: 16px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    img#logo {
+        width: 400px;
+    }    
+        
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+  
+    a.button, h3 {
+        font-size: 18px;
+    }
+
+}
+  
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    body {
+      font-size: 17px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    img#logo {
+        width: 400px;
+    }    
+        
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+    
+    a.button, h3 {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 700px;
+      padding: 0 20px;
+    }
+}
+  
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    body {
+      font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    img#logo {
+        width: 450px;
+    }    
+        
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+    
+    a.button, h3 {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 800px;
+        padding: 0 20px;
+    }
+}
+  

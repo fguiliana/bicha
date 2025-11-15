@@ -1,0 +1,11 @@
+{
+    "version": "1.0",
+    "disallow": {
+      "tdm": true
+    },
+    "policy": {
+      "contact": "mailto:lacuisinedebicha@gmail.com",
+      "terms": "https://www.lacuisinedebicha.fr/terms"
+    }
+  }
+  
