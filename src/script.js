@@ -1,15 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("Bienvenue chez Fludo !");
+    console.log("Et vous ça biche ?");
     console.log("Website made with love by Cam & Flo");
-    const dateLimite = new Date(2025, 11, 31, 23, 59, 59);
-    const now = new Date();
-    if (now > dateLimite) {
-      const elements = document.getElementsByClassName("xmas25");
-      console.log(elements);
-      for (var i = 0; i < elements.length; i++) {
-        elements[i].classList.add("hidden");
-      }
-    }
 })
 
 window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
