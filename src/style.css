@@ -6,6 +6,7 @@
 @import 'styles/slideshow.css';
 @import 'styles/header.css';
 @import 'styles/block.css';
+@import 'styles/contact.css';
 
 /* Fonts imports */
 @font-face {
@@ -61,7 +62,7 @@ header, nav, section, footer {
 }
 
 button {
-    box-shadow: 5px 5px #C26963;
+    /* box-shadow: 5px 5px #C26963;
     background-color: #fff;
     width: 100%;
     margin: 10px 0;
@@ -72,19 +73,19 @@ button {
     text-transform: uppercase;
     display: block;
     color: #0C0A0B;
-    border: 1px solid #333;
+    border: 1px solid #333; */
 }
 
 button:hover {
-    background-color: #fbfcc5;
-    cursor: pointer;
+    /* background-color: #fbfcc5;
+    cursor: pointer; */
 }
 
 button:focus {
-    position: relative;
+    /* position: relative;
     left: 5px;
     top: 5px;
-    box-shadow: unset;
+    box-shadow: unset; */
 }
 
 .progress-indicator__icon {
@@ -93,10 +94,10 @@ button:focus {
 }
 
 input {
-    width: 100% !important;
+    /* width: 100% !important;
     margin-top: 10px;
     border: 1px solid #0C0A0B;
-    padding: 12.5px;
+    padding: 12.5px; */
 }
 
 input:focus {
@@ -146,7 +147,8 @@ h2 {
 
 h3 {
     font-weight: 600;
-    font-family: 'Antonio';
+    font-family: 'HankenGrotesk';
+    margin: 20px 0 5px 0;
     text-transform: uppercase;
 }
 
@@ -360,6 +362,9 @@ img {
 
     h2 {
         font-size: 20px;
+    }
+    h3 {
+        text-align: start;
     }
     
     a.button, h3 {

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLUDO │ LE restaurant Brunch à Valence</title>
-    <meta name="description" content= "Flo et Ludo vous propose un concept de restaurant All Day Brunch à 5 minutes à pied du centre de Valence ! Au menu : pancakes, œufs Bénédicte et bien d'autres…">
-    <meta property="og:title" content="Fludo : Le 'All Day Brunch' de Valence">
+    <title>La Cuisine de Bicha</title>
+    <meta name="description" content= "Cuisine conviviale, paëllas & plats faits maison pour vos événements">
+    <meta property="og:title" content="La Cuisine de Bicha : Cuisine conviviale, paëllas & plats faits maison pour vos événements">
     <meta name="robots" content="noai, notdm">
     <meta name="tdm-policy" content="contact=mailto:contact@fludo.fr; terms=https://github.com/fguiliana/fludo/terms">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,6 +14,17 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialisation de l'API EmailJS
+        (function() {
+            // Remplacez « YOUR_PUBLIC_KEY » par votre clé publique EmailJS depuis votre tableau de bord
+            emailjs.init({
+                publicKey: 'wcy9XEYLqeMZK0Rlu'
+            });
+        })();
+    </script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -143,7 +154,7 @@
             </div>
         </section>
         <!-- <div class="divider"></div> -->
-        <section class="block">
+        <!-- <section class="block">
             <h2>Infos pratiques</h2>
             <div class="description">
                 Voici toutes les infos nécessaires pour profiter pleinement de votre expérience chez nous !
@@ -235,61 +246,84 @@
                 </details>
            </div>
         </section>
-        <div class="divider"></div>
-        <section class="block">
-            <h2>On vous tient au jus !</h2>
-            <div>
-                <div id="sib-form-container">
-                    <div id="error-message" class="sib-form-message-panel" style="text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949;max-width:540px;">
-                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                                <path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z" />
-                            </svg>
-                            <span class="sib-form-message-panel__inner-text">
-                                Nous n&#039;avons pas pu confirmer votre inscription.
-                            </span>
-                        </div>
+        <div class="divider"></div> -->
+        <section class="contact-block">
+            <h2>Contact & devis – Bicha cuisine conviviale pour vous ! </h2>
+            <p>Un événement à organiser ? </p><p>Envie d’un repas simple, généreux pour un repas de famille ou une fête privée ?</p>
+
+            <h3>Prise de contact</h3>
+            <p>Remplissez le formulaire ci-dessous en précisant votre événement, la date et le nombre de personnes.</p>
+            <h3>Devis personnalisé</h3>
+            <p>Je vous répondrai rapidement pour établir un devis personnalisé.Chaque événement est différent. Je vous propose donc un devis sur mesure, adapté à vos envies, à votre budget et au nombre de convives.</p>
+            <h3>Cuisine sur place</h3>
+            <p>Le jour J, je cuisine directement sur le lieu de votre événement.</p>
+
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
                     </div>
-                    <div></div>
-                    <div id="success-message" class="sib-form-message-panel" style="text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66;max-width:540px;">
-                        <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                            <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon">
-                                <path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z" />
-                            </svg>
-                            <span class="sib-form-message-panel__inner-text">
-                                Votre inscription est confirmée.
-                            </span>
-                        </div>
-                    </div>
-                    <div>
-                        <form id="sib-form" method="POST" action="https://5db28197.sibforms.com/serve/MUIFALlqwX0ZJAF5jfnIwOuAqv-33gL4iCBkxeXaGkutAs71YvwFM-2xT_e-fRhSVB7_rjZVHoukgZMGL6nrZSDnNKnDErYeNizn3lV1tOT-5iMWLXYY7mD5n1wsCXMby6wtdtAJ_fU22RGBSu6sy9m2yhQYuRd03ZWFI8_JYDnAtTmQ99lvuqZwPI8htPbaqj885RoY_6Od_1F1" data-type="subscription">
-                            <!-- <p>Inscrivez-vous à notre newsletter pour suivre nos actualités.</p>                         -->
-                            <div class="sib-input">
-                                <div class="form__entry entry_block">
-                                    <div class="form__label-row ">
-                                        <label class="" for="EMAIL" data-required="*">
-                                            Il suffit de renseigner votre adresse email ci-dessous pour être informés des nouveautés de votre brunch preferé !
-                                        </label>
-                                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="on" placeholder="monmail@pancakes.fr" data-required="true" required />
-                                    </div>
-                                    <label for="EMAIL" class="entry__error entry__error--primary" style="color:#661d1d; background-color:#ffeded; border: 1px solid #ff4949; padding: 0.5rem">
-                                    </label>
-                                </div>
-                            </div>
-                            <div>
-                                <button class="button" form="sib-form" type="submit">
-                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
-                                        <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z" />
-                                    </svg>
-                                    S&#039;INSCRIRE
-                                </button>
-                            </div>
-                            <input type="text" name="email_address_check" value="" class="input--hidden">
-                            <!-- <input type="hidden" name="locale" value="fr"> -->
-                        </form>
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom de famille">
                     </div>
                 </div>
-            </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Adresse mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required placeholder="06 00 00 00 00">
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label for="event-type">Type d’évènement</label>
+                        <select id="event-type" name="event_type">
+                            <option value="Anniversaire">Anniversaire</option>
+                            <option value="Mariage">Mariage</option>
+                            <option value="Baptême">Baptême</option>
+                            <option value="Evènement d'entreprise">Evènement d'entreprise</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="date_event">Date de l'évènement *</label>
+                        <input 
+                            type="date" 
+                            id="date_event" 
+                            name="date_event" 
+                            required
+                            min=""
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Nombre de personnes *</label>
+                        <input type="number" id="guests" name="guests" required min="1" placeholder="Nombre de convives">
+                    </div> -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date_event">Date de l'évènement *</label>
+                            <input type="date" id="date_event" name="date_event" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Nombre de personnes *</label>
+                            <input type="number" id="guests" name="guests" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required rows="4" placeholder="Écrivez votre message ici…"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Envoyer</button>
+                        <p id="form-status" class="status-message"></p>
+                    </div>
+            </form>
         </section>
     </main>
 
@@ -316,6 +350,8 @@
     </footer>
     <!-- JavaScript -->
     <script defer src="script.js"></script>
+    <!-- Script personnalisé pour gérer l’envoi du formulaire -->
+    <script src="contact.js"></script>
     <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
