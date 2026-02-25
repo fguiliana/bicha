@@ -1,96 +1,94 @@
 .accordion {
   margin-top: 30px;
 }
-.slider_container {
-    position: relative;
-    /* margin-top: 30px; */
-    width: 100%;
-    height: 25rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
+
+.photo-carousel-section {
+  margin-top: 20px;
+  margin-bottom: 5vh;
+}
+
+.photo-carousel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.photo-carousel__viewport {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 2vh;
+  background-color: #eac89a;
+}
+
+.photo-carousel__track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transform: translateX(0%);
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
+
+.photo-carousel__slide {
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.photo-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-carousel__thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.photo-carousel__thumb {
+  margin: 0;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 1vh;
+  overflow: hidden;
+  cursor: pointer;
+  background: transparent;
+  line-height: 0;
+}
+
+.photo-carousel__thumb img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.photo-carousel__thumb:hover img,
+.photo-carousel__thumb:focus-visible img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.photo-carousel__thumb.is-active {
+  border-color: #ff5325;
+}
+
+.photo-carousel__thumb.is-active img {
+  opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+  .photo-carousel__viewport {
+    aspect-ratio: 4 / 3;
   }
-  .slider {
-    position: relative;
-    width: 400%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+
+  .photo-carousel__thumbnails {
+    gap: 6px;
   }
-  .slide {
-    position: relative;
-    min-width: 100%;
-    height: 100%;
-  }
-  .slide img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
-  .slide .caption {
-    position: absolute;
-    left: 0;
-    bottom: 5%;
-    font-size: 5rem;
-    font-weight: 600;
-    color: white;
-    text-transform: capitalize;
-    background: rgba(0, 0, 0, 0.348);
-    backdrop-filter: blur(10px);
-    padding: 1rem 5rem;
-    border-radius: 0 2rem 2rem 0;
-  }
-  .slide.one {
-    background: rgb(182, 19, 109);
-  }
-  .slide.two {
-    background: rgb(255, 64, 64);
-  }
-  .slide.three {
-    background: rgb(11, 173, 188);
-  }
-  .slide.four {
-    background: rgb(11, 188, 14);
-  }
-  .slide.five {
-    background: rgb(173, 11, 188);
-  }
-  @keyframes sliding {
-    0% {
-        transform: translateX(0%);
-    }
-    15% {
-        transform: translateX(0%);
-    }
-    20% {
-        transform: translateX(-100%);
-    }
-    35% {
-        transform: translateX(-100%);
-    }
-    40% {
-        transform: translateX(-200%);
-    }
-    55% {
-        transform: translateX(-200%);
-    }
-    60% {
-        transform: translateX(-300%);
-    }
-    75% {
-        transform: translateX(-300%);
-    }
-    80% {
-        transform: translateX(-400%);
-    }
-    95% {
-        transform: translateX(-400%);
-    }
-    100% {
-        transform: translateX(-0%);
-    }
-  }
+}
