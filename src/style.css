@@ -88,6 +88,10 @@ button:focus {
     box-shadow: unset; */
 }
 
+a {
+    color: #0C0A0B;
+}
+
 .progress-indicator__icon {
     position: relative;
     height: 15px;
@@ -181,7 +185,7 @@ img {
 }
 
 .social-icons {
-    margin-top: 10px;
+    margin: 10px 30px;
 }
 
 .social-icons a {
@@ -193,11 +197,12 @@ img {
 }
 
 .social-icons a:hover {
-    color: #C26963; /* Couleur du logo du site (à personnaliser) */
+    color: #ff5325; /* Couleur du logo du site (à personnaliser) */
+    width: 60px;
 }
 
 .icon-footer {
-    width: 60px;
+    width: 70px;
 }
 
 .soon {
@@ -208,9 +213,19 @@ img {
     height: 400px;
 }
 .soon img {
-        height: 50%;
-        margin-right: 30px;
-    }
+    height: 50%;
+    margin-right: 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer>p {
+    text-align: center;
+}
   
 /* Breakpoints */
 /* Extra Small Devices (phones, less than 576px) */
