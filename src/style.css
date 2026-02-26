@@ -1,7 +1,12 @@
 /* Reset CSS */
 @import 'styles/reset.css';
+
+/* Blocks imports */
 @import 'styles/accordion.css';
 @import 'styles/slideshow.css';
+@import 'styles/header.css';
+@import 'styles/block.css';
+@import 'styles/contact.css';
 
 /* Fonts imports */
 @font-face {
@@ -26,16 +31,17 @@
 
 
 /* Base Reset */
-* {
+/* * {
     margin: 0;
     padding: 0;
-}
+} */
   
 /* Typography */
 body {
     background-color: #f8d6a9;
     font-family: 'HankenGrotesk';
     font-size: 16px;
+    color: #0C0A0B;
 }
 
 strong {
@@ -45,23 +51,8 @@ strong {
   
 /* Container */
 .container {
-    max-width: 600px;
     margin: 0 auto;
     padding: 0 15px;
-}
-
-.intro {
-    border: 1px solid;
-    margin: 0 20px;
-}
-
-.noel {
-    background-color: #334A39;
-    color: white !important;
-}
-
-.hidden {
-    display: none;
 }
 
   /* Global Styles */
@@ -70,35 +61,35 @@ header, nav, section, footer {
     text-align: center;
 }
 
-header {
-    margin-bottom: 15px;
-}
-
 button {
-    box-shadow: 5px 5px #C26963;
+    /* box-shadow: 5px 5px #C26963;
     background-color: #fff;
     width: 100%;
     margin: 10px 0;
     padding: 10px;
-    font-family: 'Antonio';
+    font-family: 'HankenGrotesk';
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
     display: block;
-    color: rgb(0, 0, 0);
-    border: 1px solid #333;
+    color: #0C0A0B;
+    border: 1px solid #333; */
 }
 
 button:hover {
-    background-color: #fbfcc5;
-    cursor: pointer;
+    /* background-color: #fbfcc5;
+    cursor: pointer; */
 }
 
 button:focus {
-    position: relative;
+    /* position: relative;
     left: 5px;
     top: 5px;
-    box-shadow: unset;
+    box-shadow: unset; */
+}
+
+a {
+    color: #0C0A0B;
 }
 
 .progress-indicator__icon {
@@ -107,10 +98,10 @@ button:focus {
 }
 
 input {
-    width: 100% !important;
+    /* width: 100% !important;
     margin-top: 10px;
-    border: 1px solid #000;
-    padding: 12.5px;
+    border: 1px solid #0C0A0B;
+    padding: 12.5px; */
 }
 
 input:focus {
@@ -118,10 +109,13 @@ input:focus {
 }
 
 input::placeholder {
-    font-family: 'Open Sans';
+    font-family: 'HankenGrotesk';
     font-size: inherit;
 }
 
+ul {
+    margin-bottom: 10px;
+}
 li {
     list-style: inside;
 }
@@ -130,37 +124,35 @@ li {
     margin-bottom: 5px;
 }
 
-img#logo {
-    margin: 15px 0;
-}
-
-section.block {
-    text-align: left;
-    margin-top: 20px;
-}
-
 div {
     line-height: normal;
 }
 
+p {
+    text-align: justify;
+}
+
 h1 {
-    line-height: 1.6;
-    font-family: 'Antonio';
+    line-height: 1;
+    font-family: 'ArchivoBlack';
     text-transform: uppercase;
     margin-bottom: 5px;
+    text-align: center;
 }
 
 h2 {
-    line-height: 1.6;
+    font-family: 'ArchivoBlack';
+    line-height: 1;
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     letter-spacing: -0.5px;
 }
 
 h3 {
     font-weight: 600;
-    font-family: 'Antonio';
+    font-family: 'HankenGrotesk';
+    margin: 20px 0 5px 0;
     text-transform: uppercase;
 }
 
@@ -184,37 +176,16 @@ div.divider2 {
 
 a.address {
     font-style: oblique;
-    color: black;
+    color: #0C0A0B;
 }
 
-a.button {
-    box-shadow: 5px 5px #C26963;
-    margin-top: 20px;
-    padding: 10px;
-    font-family: 'Antonio';
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    color: rgb(0, 0, 0);
-    border: 1px solid #333;
-}
-
-a.button:active {
-    position: relative;
-    left: 5px;
-    top: 5px;
-    box-shadow: unset;
-}
-
-  
 img {
     max-width: 100%;
     height: auto;
 }
 
 .social-icons {
-    margin-top: 10px;
+    margin: 10px 30px;
 }
 
 .social-icons a {
@@ -226,7 +197,12 @@ img {
 }
 
 .social-icons a:hover {
-    color: #C26963; /* Couleur du logo du site (à personnaliser) */
+    color: #ff5325; /* Couleur du logo du site (à personnaliser) */
+    width: 60px;
+}
+
+.icon-footer {
+    width: 70px;
 }
 
 .soon {
@@ -237,9 +213,19 @@ img {
     height: 400px;
 }
 .soon img {
-        height: 50%;
-        margin-right: 30px;
-    }
+    height: 50%;
+    margin-right: 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer>p {
+    text-align: center;
+}
   
 /* Breakpoints */
 /* Extra Small Devices (phones, less than 576px) */
@@ -256,10 +242,6 @@ img {
         font-size: 14px;
     }
 
-    img#logo {
-        width: 200px;
-    }    
-        
     h1 {
         font-size: 24px;
     }
@@ -291,10 +273,6 @@ img {
         font-size: 15px;
     }
 
-    img#logo {
-        width: 300px;
-    }    
-        
     h1 {
         font-size: 32px;
     }
@@ -304,6 +282,7 @@ img {
     }
     
     .container {
+        width: 550px;
         padding: 0 10px;
     }
   
@@ -327,10 +306,6 @@ img {
         font-size: 16px;
     }
 
-    img#logo {
-        width: 400px;
-    }    
-        
     h1 {
         font-size: 34px;
     }
@@ -341,6 +316,7 @@ img {
     
     .container {
         padding: 0 10px;
+        width: 750px;
     }
   
     a.button, h3 {
@@ -363,10 +339,6 @@ img {
         font-size: 16px;
     }
 
-    img#logo {
-        width: 400px;
-    }    
-        
     h1 {
         font-size: 34px;
     }
@@ -380,8 +352,8 @@ img {
     }
     
     .container {
-        max-width: 700px;
-      padding: 0 20px;
+        max-width: 800px;
+        padding: 0 20px;
     }
 }
   
@@ -399,10 +371,6 @@ img {
         font-size: 16px;
     }
 
-    img#logo {
-        width: 450px;
-    }    
-        
     h1 {
         font-size: 34px;
     }
@@ -410,13 +378,16 @@ img {
     h2 {
         font-size: 20px;
     }
+    h3 {
+        text-align: start;
+    }
     
     a.button, h3 {
         font-size: 18px;
     }
     
     .container {
-        max-width: 800px;
+        max-width: 920px;
         padding: 0 20px;
     }
 }

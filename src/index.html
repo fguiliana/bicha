@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LA CUISINE DE BICHA</title>
-    <meta name="description" content= "">
-    <meta property="og:title" content="">
+    <title>La Cuisine de Bicha</title>
+    <meta name="description" content= "Cuisine conviviale, paëllas & plats faits maison pour vos événements">
+    <meta property="og:title" content="La Cuisine de Bicha : Cuisine conviviale, paëllas & plats faits maison pour vos événements">
     <meta name="robots" content="noai, notdm">
-    <meta name="tdm-policy" content="contact=mailto:lacuisinedebicha@gmail.com; terms=https://www.lacuisinedebicha.fr/terms">
+    <meta name="tdm-policy" content="contact=mailto:contact@fludo.fr; terms=https://github.com/fguiliana/fludo/terms">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="media/favicon.png" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <meta name="emailjs-public-key" content="__EMAILJS_PUBLIC_KEY__">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -43,16 +46,322 @@
         </script>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <img id="logo" src="media/bicha.png" alt="Logo Fludo, brunch à Valence Dröme">
+    </header>
+
     <!-- Main Content -->
     <main class="container">
-        <section class="block soon">
-            <img src="media/logo-b.webp" alt="">
-            <div class="block_content">Nous sommes en train de faire une paëlla ! <br>Le site arrive bientôt ! <br><br>- La Cuisine de Bicha  </div>
+
+        <!-- Block H1 -->
+        <section class="block-title">
+            <div class="">
+                <h1>Cuisine conviviale, paëllas & plats faits maison pour vos événements</h1>
+                <div class="slogan">
+                    Des plats généreux, cuisinés sur place, pour rassembler famille, amis et collègues autour d’un vrai moment de partage.
+                </div>
+                <div class="button-devis">
+                    <a class="button-devis" href="#contact-block">Demander un devis pour mon événement</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block  -->
+        <section class="block">
+            <div class="sub_block_img_container">
+                <img class="sub_block_img" src="/src/media/photo1.jpg" alt="">
+            </div>
+            <div class="sub_block">
+                <h2>Bicha, une histoire de cuisine, de famille et de convivialité</h2>
+                <div class="block_content">
+                    <p>Je m’appelle Adrien. Chez moi, la cuisine, c’est une histoire de famille. Mon père faisait déjà ce métier avant moi. Et avant lui, il y avait les recettes de mes grands-mères. Des plats simples, généreux, que l’on partage autour de la table, sans chichi.</p>
+                    <p>C’est comme ça que j’ai appris à cuisiner : le goût des choses simples, le plaisir de faire plaisir, et l’importance des belles portions.</p>
+                    <p>Avec BICHA, j’ai voulu continuer cette tradition. Une cuisine faite maison, sans prise de tête, pensée pour rassembler et créer de vrais moments de partage.</p>
+                    <p>Aujourd’hui, je cuisine pour des anniversaires, des repas de famille, des fêtes de village ou des événements associatifs.</p>
+                    <p>Je cuisine sur place, dans une ambiance chaleureuse et bon enfant, avec une seule idée en tête : que tout le monde se sente bien, comme à la maison.</p>
+                </div>
+                <div class="button">
+                    <a class="button" href="https://www.instagram.com/lacuisinedebicha">Visiter le instagram de Bicha</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block  -->
+        <section class="block">
+            <div class="sub_block_img_container">
+                <img class="sub_block_img" src="/src/media/photo2.jpg" alt="">
+            </div>
+            <div class="sub_block">
+                <h2>Une cuisine conviviale pour tous vos évènements</h2>
+                <div class="block_content">
+                    <p>Je vous accompagne pour tous vos événements, petits ou grands. L’idée est simple : une cuisine conviviale et chaleureuse, des plats généreux,  idéale pour partager un bon moment sans prise de tête.</p>
+                    <ul>
+                        <li>Anniversaires</li>
+                        <li>Repas de famille</li>
+                        <li>Mariages & fêtes privées</li>
+                        <li>Fêtes de village & événements communaux</li>
+                        <li>Evènements associatifs et d'entreprise</li>
+                    </ul>
+                    <p>Je cuisine sur place, dans de grandes poêles à paella. Une grande partie des recettes viennent de ma famille, transmise de génération en génération. Cuisiner ainsi sur place crée une ambiance simple et bon enfant. Vos invités peuvent sentir les plats, discuter avec moi et profiter pleinement du moment. Et pendant que je m’occupe des plats, vous profitez de vos invités.</p>
+                    <p>Mon objectif : que vos invités repartent rassasiés, heureux et avec le souvenir d’un bon repas partagé, comme à la maison !</p>
+                </div>
+                <div class="button">
+                    <a class="button" href="https://www.facebook.com/lacuisinedebicha">Visiter le Facebook de Bicha</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-block">
+            <h2>La carte – des plats faits maison et généreux</h2>
+            <div class="block_content">
+                <p>Chez Bicha, la carte est volontairement simple : des plats conviviaux, cuisinés en grande quantité, avec des belles portions et des recettes qui plaisent à tous. Chaque prestation est adaptée à votre événement, au nombre de personnes et à vos besoins.</p>
+            </div>
+            <div class="menu-embed">
+                    <iframe loading="lazy" class="iframe"
+                    src="https://www.canva.com/design/DAG_i9zwwA4/mIImMk05fOREO9YP-zncWg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
+            </div>
         </section>
         
+        <section class="photo-carousel-section" aria-label="Galerie photos">
+            <div class="photo-carousel" data-autoplay="4500">
+                <div class="photo-carousel__viewport">
+                    <div class="photo-carousel__track">
+                        <figure class="photo-carousel__slide">
+                            <img src="media/photo1.jpg" alt="Plat généreux préparé par La Cuisine de Bicha">
+                        </figure>
+                        <figure class="photo-carousel__slide">
+                            <img src="media/photo2.jpg" alt="Cuisine conviviale pour un événement" loading="lazy">
+                        </figure>
+                        <figure class="photo-carousel__slide">
+                            <img src="media/photo1.jpg" alt="Préparation maison en grande poêle" loading="lazy">
+                        </figure>
+                        <figure class="photo-carousel__slide">
+                            <img src="media/photo2.jpg" alt="Service traiteur Bicha sur place" loading="lazy">
+                        </figure>
+                        <figure class="photo-carousel__slide">
+                            <img src="media/photo1.jpg" alt="Repas convivial pour vos invités" loading="lazy">
+                        </figure>
+                    </div>
+                </div>
+                <div class="photo-carousel__thumbnails" role="tablist" aria-label="Miniatures du carousel">
+                    <button class="photo-carousel__thumb is-active" type="button" data-index="0" aria-label="Voir la photo 1" aria-current="true">
+                        <img src="media/photo1.jpg" alt="Miniature photo 1">
+                    </button>
+                    <button class="photo-carousel__thumb" type="button" data-index="1" aria-label="Voir la photo 2" aria-current="false">
+                        <img src="media/photo2.jpg" alt="Miniature photo 2" loading="lazy">
+                    </button>
+                    <button class="photo-carousel__thumb" type="button" data-index="2" aria-label="Voir la photo 3" aria-current="false">
+                        <img src="media/photo1.jpg" alt="Miniature photo 3" loading="lazy">
+                    </button>
+                    <button class="photo-carousel__thumb" type="button" data-index="3" aria-label="Voir la photo 4" aria-current="false">
+                        <img src="media/photo2.jpg" alt="Miniature photo 4" loading="lazy">
+                    </button>
+                    <button class="photo-carousel__thumb" type="button" data-index="4" aria-label="Voir la photo 5" aria-current="false">
+                        <img src="media/photo1.jpg" alt="Miniature photo 5" loading="lazy">
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- <div class="divider"></div> -->
+        <!-- <section class="block">
+            <h2>Infos pratiques</h2>
+            <div class="description">
+                Voici toutes les infos nécessaires pour profiter pleinement de votre expérience chez nous !
+            </div>
+            <a class="button" href="https://reservation.laddition.com/booking/fludo">Réserve une table!</a>
+            <div class="accordion">
+                <details>
+                    <summary><h3><strong>Horaires</strong> & Pics d'affluence</h3></summary>
+                    <div class="content">
+                        <p>
+                            La cuisine est ouverte de 10h00 à 15h00, ce qui signifie que nous prenons les dernières commandes à 14h30. Le reste du temps, le restaurant passe en mode coffee shop.
+                            Nos pics d'affluence sont de 10h30 à 13h00 les week-ends (surtout le dimanche, “The day of the Brunch”) et les jours fériés; et de 11h30 à 13h00 en semaine.</br>
+                            <i>Petit tip : Regarder notre fiche Google pour avoir la fréquentation en direct !</i>
+                        </p>
+                        <a class="" href="https://maps.app.goo.gl/TYoxBUfpQGfPGVpT9">Notre fiche Google</a>
+                    </div>
+                </details>
+                <details>
+                    <summary><h3>Réserver votre <strong>brunch en semaine</strong></h3></summary>
+                    <div class="content">
+                        <p>
+                            Victime de notre succès, nous vous conseillons fortement de réserver en semaine. En plus, vous pouvez le faire directement en ligne en cliquant sur ce lien : 
+                        </p>
+                        <a class="" href="https://reservation.laddition.com/booking/fludo">réserver une table!</a>
+                    </div>
+                </details>
+                <details>
+                    <summary><h3><strong>Les week-ends</strong>, c'est sans résa !</h3></summary>
+                    <div class="content">
+                        <p>
+                            Chez Fludo, nous ne prenons pas de réservations le week-end, car nous fonctionnons en service continu de 10h à 14h30. Chacun arrive et repart à son rythme ! 
+                            Ainsi, nous avons la flexibilité d'accommoder un plus grand nombre de clients et de gérer plus efficacement notre flux de service.</br>
+                            <i>Petit tip : Venez dès l'ouverture ou en fin de service pour avoir plus de chances d'avoir une table sans attendre.</i>
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h3>Installation des <strong>groupes au complet</strong></h3></summary>
+                    <div class="content">
+                        <p>
+                            Pour des raisons de fluidité et d'organisation, nous installons les groupes uniquement lorsqu'ils sont au complet ! Cela évite de bloquer des tables et nous aide à garder une attente raisonnable pour tous. </br>
+                            <i>Petit tip : En famille ou entre amis, on vous conseille d'arriver ensemble pour profiter d'un service plus rapide pour tous.</i>
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h3><strong>Pas d'animaux</strong> en intérieur</h3></summary>
+                    <div class="content">
+                        <p>
+                            Même si nous adorons les animaux, nous ne pouvons pas recevoir vos boules de poils à l'intérieur, et ce, peu importe leur taille et leur gentillesse. Notre salle est trop étroite et animée pour vos boules de poils, surtout le week-end. 
+                            Les animaux sont les bienvenus en terrasse, mais pour le confort de tous, pas en intérieur. Merci !
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h3><strong>6 personnes max</strong> par groupe</h3></summary>
+                    <div class="content">
+                        <p>
+                            Notre salle a une capacité de 32 couverts (sans la terrasse), nous avons des tables de 2,3,4,5,6. 
+                            Elle ne nous permet pas d'accueillir des gros groupes de potes ou de grandes familles de plus de 6 personnes sur une même tablée, même si on adorerait. 
+                            En plus, on envoie les plats progressivement pour garantir leur qualité, ce qui rend compliqué le service de grandes tablées d'un seul coup. 
+                            Nous privilégions les petits groupes pour une expérience plus agréable pour tous nos clients.
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary><h3>Roulement des tables et <strong>attente</strong></h3></summary>
+                    <div class="content">
+                        <p>
+                            Pour que tout se passe bien et que l'attente soit réduite, on compte sur vous pour faciliter la rotation des tables. 
+                            Dès que vous avez fini de vous régaler et que les conversations se calment, pensez à laisser la place aux autres. 
+                            Si vous avez dû attendre avant d'être installé, rappelez-vous que les prochains convives sont également impatients de découvrir nos plats!
+                        </p>
+                    </div>
+                </details>
+                <details class="noel" id="xmas25">
+                    <summary class="xmas" style="background-color: #334A39; color: white;"><h3>Village de Noël, les <strong>horaires</strong></h3></summary>
+                    <div class="content" style="color: white;">
+                        <p>Nous serons présents tous les jours du 28 Novembre au 28 Décembre au Village de Noël de Valence, à côté de la fontaine Monumentale et du Grand Café, en haut du Boulevard Bancel.</br>
+                            Les horaires d'ouverture seront les suivants :</br></br></p>
+                            <ul>
+                                <li>Le Vendredi 28 Novembre : de 18h à 21h</li>
+                                <li>Du Dimanche au Jeudi : de 11h à 19h</li>
+                                <li>Les Vendredis et Samedis : de 11h à 21h</li>
+                                <li>Le Mercredi 24 et le Jeudi 25 Décembre : de 11h - 17h</li>
+                                <li>Le Dimanche 28 Décembre : de 11h - 16h</li>
+                            </ul>
+                    </div>
+                </details>
+           </div>
+        </section>
+        <div class="divider"></div> -->
+        <section class="contact-block" id="contact-block">
+            <h2>Contact & devis – Bicha cuisine conviviale pour vous ! </h2>
+            <p>Un événement à organiser ? </p><p>Envie d’un repas simple, généreux pour un repas de famille ou une fête privée ?</p>
+
+            <h3>Prise de contact</h3>
+            <p>Remplissez le formulaire ci-dessous en précisant votre événement, la date et le nombre de personnes.</p>
+            <h3>Devis personnalisé</h3>
+            <p>Je vous répondrai rapidement pour établir un devis personnalisé. Chaque événement est différent. Je vous propose donc un devis sur mesure, adapté à vos envies, à votre budget et au nombre de convives.</p>
+            <h3>Cuisine sur place</h3>
+            <p>Le jour J, je cuisine ou vous livre directement sur le lieu de votre événement.</p>
+
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prenom">Prénom *</label>
+                        <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+                    </div>
+                    <div class="form-group">
+                        <label for="nom">Nom *</label>
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom de famille">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Adresse mail *</label>
+                        <input type="email" id="email" name="email" required placeholder="exemple@domaine.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone *</label>
+                        <input type="tel" id="telephone" name="telephone" required placeholder="06 00 00 00 00">
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <label for="event-type">Type d’évènement</label>
+                        <select id="event-type" name="event_type">
+                            <option value="Anniversaire">Anniversaire</option>
+                            <option value="Mariage">Mariage</option>
+                            <option value="Baptême">Baptême</option>
+                            <option value="Evènement d'entreprise">Evènement d'entreprise</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="date_event">Date de l'évènement *</label>
+                        <input 
+                            type="date" 
+                            id="date_event" 
+                            name="date_event" 
+                            required
+                            min=""
+                        >
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Nombre de personnes *</label>
+                        <input type="number" id="guests" name="guests" required min="1" placeholder="Nombre de convives">
+                    </div> -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date_event">Date de l'évènement *</label>
+                            <input type="date" id="date_event" name="date_event" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guests">Nombre de personnes *</label>
+                            <input type="number" id="guests" name="guests" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required rows="4" placeholder="Écrivez votre message ici…"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Envoyer</button>
+                        <p id="form-status" class="status-message"></p>
+                    </div>
+            </form>
+        </section>
     </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 La Cuisine de Bicha. Tous droits réservés. <a href="mentions.html">Mentions légales</a></p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/lacuisinedebicha" target="_blank" aria-label="Instagram" rel="noopener">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/lacuisinedebicha" target="_blank" aria-label="Facebook" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <!-- <a href="https://maps.app.goo.gl/6g2QSEkhwfaf5TP17" target="_blank" aria-label="Google" rel="noopener">
+                <i class="fab fa-google"></i>
+            </a> -->
+        </div>
+        <div class="social-icons">
+            <a href="https://www.lacuisinedebicha.fr" target="_blank" aria-label="La Cuisine de Bicha" rel="noopener">
+                <img class="icon-footer" src="media/logo-b.webp" alt="">
+            </a>
+        </div>
+
+    </footer>
     <!-- JavaScript -->
     <script defer src="script.js"></script>
-    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+    <!-- Script personnalisé pour gérer l’envoi du formulaire -->
+    <script src="contact.js"></script>
 </body>
 </html>
