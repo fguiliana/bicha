@@ -1,17 +1,17 @@
 /*
  * Script pour gérer l'envoi du formulaire de contact via EmailJS.
- * La clé publique peut être injectée au build via EMAILJS_PUBLIC_KEY.
+ * La clé publique peut être injectée par Sevalla via ${EMAILJS_PUBLIC_KEY}.
  */
 
 document.addEventListener("DOMContentLoaded", function () {
     const defaultPublicKey = "wcy9XEYLqeMZK0Rlu";
-    const buildPlaceholder = "__EMAILJS_PUBLIC_KEY__";
+    const unresolvedEnvVarPattern = /^\$\{[A-Z0-9_]+\}$/;
 
     const getEmailJsPublicKey = () => {
         const meta = document.querySelector('meta[name="emailjs-public-key"]');
         const metaKey = meta?.content?.trim();
 
-        if (metaKey && metaKey !== buildPlaceholder) {
+        if (metaKey && !unresolvedEnvVarPattern.test(metaKey)) {
             return metaKey;
         }
 
