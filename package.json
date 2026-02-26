@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "minify:css": "cleancss -o dist/style.css src/style.css",
-    "minify:js": "uglifyjs src/script.js -o dist/script.js",
-    "minify:html": "./node_modules/.bin/html-minifier-terser --collapse-whitespace --remove-comments --remove-optional-tags -o dist/index.html src/index.html"
+    "minify:js": "uglifyjs src/script.js -o dist/script.js && uglifyjs src/contact.js -o dist/contact.js",
+    "minify:html": "node scripts/build-html.js"
   },
   "dependencies": {
     "clean-css-cli": "^5.6.3",

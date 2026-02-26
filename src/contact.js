@@ -1,21 +1,45 @@
 /*
  * Script pour gérer l'envoi du formulaire de contact via EmailJS.
- * ⚠️ Remplace les valeurs par TES identifiants EmailJS.
+ * La clé publique peut être injectée au build via EMAILJS_PUBLIC_KEY.
  */
 
 document.addEventListener("DOMContentLoaded", function () {
+    const defaultPublicKey = "wcy9XEYLqeMZK0Rlu";
+    const buildPlaceholder = "__EMAILJS_PUBLIC_KEY__";
+
+    const getEmailJsPublicKey = () => {
+        const meta = document.querySelector('meta[name="emailjs-public-key"]');
+        const metaKey = meta?.content?.trim();
+
+        if (metaKey && metaKey !== buildPlaceholder) {
+            return metaKey;
+        }
+
+        return defaultPublicKey;
+    };
+
+    if (typeof emailjs === "undefined") {
+        console.error("EmailJS SDK introuvable");
+        return;
+    }
 
     // Bloque les dates passées
     const dateInput = document.getElementById("date_event");
-    const today = new Date().toISOString().split("T")[0];
-    dateInput.min = today;
+    if (dateInput) {
+        const today = new Date().toISOString().split("T")[0];
+        dateInput.min = today;
+    }
 
-    // 🔑 Initialise EmailJS
-    emailjs.init("wcy9XEYLqeMZK0Rlu"); 
-    // 👉 Remplace par ta clé publique EmailJS
+    // Initialise EmailJS avec la clé injectée au build, sinon fallback projet.
+    emailjs.init({
+        publicKey: getEmailJsPublicKey()
+    });
 
     const form = document.getElementById("contact-form");
     const statusMessage = document.getElementById("form-status");
+    if (!form || !statusMessage) {
+        return;
+    }
 
     form.addEventListener("submit", function (event) {
         event.preventDefault();
