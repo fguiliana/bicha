@@ -2,12 +2,8 @@
 Links
 - Remplacer les liens média ../media/ par /media
 
-## EmailJS public key (build)
+## EmailJS public key (Sevalla)
 - Variable supportée: `EMAILJS_PUBLIC_KEY`
-- Si la variable est définie au build, elle est injectée dans `dist/index.html`.
-- Sinon, la clé par défaut du projet est utilisée.
-
-Exemple:
-```bash
-EMAILJS_PUBLIC_KEY=pk_xxxxx yarn minify:html
-```
+- Dans le HTML, la clé est déclarée avec la syntaxe Sevalla: `${EMAILJS_PUBLIC_KEY}`
+- Si Sevalla résout la variable, cette valeur est utilisée.
+- Sinon, le script JS utilise la clé publique par défaut du projet.
