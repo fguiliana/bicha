@@ -2,7 +2,6 @@
 @import 'styles/reset.css';
 
 /* Blocks imports */
-@import 'styles/accordion.css';
 @import 'styles/slideshow.css';
 @import 'styles/header.css';
 @import 'styles/block.css';
@@ -12,30 +11,28 @@
 @font-face {
     font-family: 'ArchivoBlack';
     src: url('./media/fonts/ArchivoBlack.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'GrandBold';
     src: url('./media/fonts/GrandBold.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'HankenGrotesk';
     src: url('./media/fonts/HankenGrotesk.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Questrial';
     src: url('./media/fonts/Questrial.ttf') format('truetype');
+    font-display: swap;
 }
 
 
-/* Base Reset */
-/* * {
-    margin: 0;
-    padding: 0;
-} */
-  
 /* Typography */
 body {
     background-color: #f8d6a9;
@@ -46,7 +43,6 @@ body {
 
 strong {
     font-weight: 600;
-    /* font-style: bold !important; */
 }
   
 /* Container */
@@ -61,47 +57,9 @@ header, nav, section, footer {
     text-align: center;
 }
 
-button {
-    /* box-shadow: 5px 5px #C26963;
-    background-color: #fff;
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    font-family: 'HankenGrotesk';
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    color: #0C0A0B;
-    border: 1px solid #333; */
-}
-
-button:hover {
-    /* background-color: #fbfcc5;
-    cursor: pointer; */
-}
-
-button:focus {
-    /* position: relative;
-    left: 5px;
-    top: 5px;
-    box-shadow: unset; */
-}
 
 a {
     color: #0C0A0B;
-}
-
-.progress-indicator__icon {
-    position: relative;
-    height: 15px;
-}
-
-input {
-    /* width: 100% !important;
-    margin-top: 10px;
-    border: 1px solid #0C0A0B;
-    padding: 12.5px; */
 }
 
 input:focus {
@@ -120,16 +78,12 @@ li {
     list-style: inside;
 }
 
-#error-message, #success-message {
-    margin-bottom: 5px;
-}
-
 div {
     line-height: normal;
 }
 
 p {
-    text-align: justify;
+    text-align: left;
 }
 
 h1 {
@@ -156,28 +110,6 @@ h3 {
     text-transform: uppercase;
 }
 
-p.slogan {
-    text-transform: uppercase;
-    font-weight: 300;
-    font-style: condensed;
-    letter-spacing: -0.5px;
-}
-
-div.divider {
-    height: 1px;
-    margin: 20px 20px 0px 20px;
-    background-color: #333;
-}
-
-div.divider2 {
-    height: 0px;
-    margin: 20px 20px 0px 20px;
-}
-
-a.address {
-    font-style: oblique;
-    color: #0C0A0B;
-}
 
 img {
     max-width: 100%;
@@ -203,18 +135,6 @@ img {
 
 .icon-footer {
     width: 70px;
-}
-
-.soon {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    height: 400px;
-}
-.soon img {
-    height: 50%;
-    margin-right: 30px;
 }
 
 footer {
