@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Bicha Dev Server (src)",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "-d", "src"],
+      "port": 8080
+    },
+    {
+      "name": "Bicha Dist Server",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8081", "-d", "dist"],
+      "port": 8081
+    }
+  ]
+}

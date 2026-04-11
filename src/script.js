@@ -2,79 +2,74 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Et vous ça biche ?");
     console.log("Website made with love by Cam & Flo");
 
-    initPhotoCarousel();
+    initRevealAnimations();
+    initStickyNav();
+    initDateMin();
+    initSlideshow();
 });
 
-function initPhotoCarousel() {
-    const carousel = document.querySelector('.photo-carousel');
-    if (!carousel) {
-        return;
-    }
+/* Reveal on scroll */
+function initRevealAnimations() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
 
-    const track = carousel.querySelector('.photo-carousel__track');
-    const slides = Array.from(carousel.querySelectorAll('.photo-carousel__slide'));
-    const thumbs = Array.from(carousel.querySelectorAll('.photo-carousel__thumb'));
-
-    if (!track || slides.length === 0 || slides.length !== thumbs.length) {
-        return;
-    }
-
-    const autoplayDelay = Number(carousel.dataset.autoplay) || 4500;
-    const total = slides.length;
-    let currentIndex = 0;
-    let autoplayTimer = null;
-
-    const goToSlide = (index) => {
-        currentIndex = (index + total) % total;
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        thumbs.forEach((thumb, thumbIndex) => {
-            const isActive = thumbIndex === currentIndex;
-            thumb.classList.toggle('is-active', isActive);
-            thumb.setAttribute('aria-current', isActive ? 'true' : 'false');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
         });
-    };
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-    const stopAutoplay = () => {
-        if (autoplayTimer !== null) {
-            window.clearInterval(autoplayTimer);
-            autoplayTimer = null;
-        }
-    };
-
-    const startAutoplay = () => {
-        stopAutoplay();
-        autoplayTimer = window.setInterval(() => {
-            goToSlide(currentIndex + 1);
-        }, autoplayDelay);
-    };
-
-    thumbs.forEach((thumb, index) => {
-        thumb.addEventListener('click', () => {
-            goToSlide(index);
-            startAutoplay();
-        });
-    });
-
-    carousel.addEventListener('mouseenter', stopAutoplay);
-    carousel.addEventListener('mouseleave', startAutoplay);
-    carousel.addEventListener('focusin', stopAutoplay);
-    carousel.addEventListener('focusout', startAutoplay);
-
-    goToSlide(0);
-    startAutoplay();
+    reveals.forEach(el => observer.observe(el));
 }
 
-window.REQUIRED_CODE_ERROR_MESSAGE = 'Veuillez choisir un code pays';
-window.LOCALE = 'fr';
-window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
-window.REQUIRED_ERROR_MESSAGE = "Vous devez renseigner ce champ. ";
-window.GENERIC_INVALID_MESSAGE = "Les informations que vous avez fournies ne sont pas valides. Veuillez vérifier le format du champ et réessayer.";
-window.translation = {
-    common: {
-      selectedList: '{quantity} liste sélectionnée',
-      selectedLists: '{quantity} listes sélectionnées'
-    }
-};
+/* Sticky nav */
+function initStickyNav() {
+    const hero = document.getElementById('hero');
+    const nav = document.querySelector('.sticky-nav');
+    if (!hero || !nav) return;
 
-var AUTOHIDE = Boolean(0);
+    const observer = new IntersectionObserver(([entry]) => {
+        nav.classList.toggle('nav--visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+
+    observer.observe(hero);
+}
+
+/* Slideshow – Embla Carousel */
+function initSlideshow() {
+    const viewport = document.querySelector('.embla');
+    if (!viewport || typeof EmblaCarousel === 'undefined') return;
+
+    const btnPrev = document.querySelector('.slideshow__btn--prev');
+    const btnNext = document.querySelector('.slideshow__btn--next');
+
+    const embla = EmblaCarousel(viewport, {
+        loop: false,
+        align: 'start',
+        slidesToScroll: 1,
+        containScroll: 'trimSnaps',
+    });
+
+    const updateButtons = () => {
+        if (btnPrev) btnPrev.disabled = !embla.canScrollPrev();
+        if (btnNext) btnNext.disabled = !embla.canScrollNext();
+    };
+
+    btnPrev?.addEventListener('click', () => embla.scrollPrev());
+    btnNext?.addEventListener('click', () => embla.scrollNext());
+
+    embla.on('select', updateButtons);
+    embla.on('init', updateButtons);
+    embla.on('reInit', updateButtons);
+}
+
+/* Block past dates on form */
+function initDateMin() {
+    const dateInput = document.getElementById('date_event');
+    if (dateInput) {
+        dateInput.min = new Date().toISOString().split('T')[0];
+    }
+}

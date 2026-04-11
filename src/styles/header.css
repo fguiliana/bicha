@@ -1,45 +1,43 @@
+/* Hero Section */
 header {
-    /* background-color: white; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70vh;
-    margin-bottom: 15px;
+    padding: 60px 20px 30px;
+    text-align: center;
+    gap: 20px;
+    height: 75vh;
 }
 
-/* Breakpoints */
-/* Extra Small Devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
-    img#logo {
-        width: 200px;
-    }
+header img#logo {
+    width: 200px;
+    padding: 16px;
 }
-  
-/* Small Devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    img#logo {
-        width: 300px;
-    }
+
+header .slogan {
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    max-width: 500px;
+    margin: 0 auto;
 }
-  
-/* Medium Devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    img#logo {
-        width: 400px;
-    }
+
+/* Responsive */
+header .btn {
+    margin: 8px 24px 0;
 }
-  
-/* Large Devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    img#logo {
-        width: 400px;
-    }
+
+@media (min-width: 768px) {
+    header { min-height: 75vh; gap: 36px; }
+    header img#logo { width: 300px; padding: 20px; }
+    header .slogan { max-width: 550px; }
+    header h1 { max-width: 600px; }
 }
-  
-/* Extra Large Devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    img#logo {
-        width: 450px;
-    }
+
+@media (min-width: 1080px) {
+    header { min-height: 75vh; gap: 32px; }
+    header img#logo { width: 350px; padding: 24px; }
+    header .slogan { max-width: 600px; }
+    header h1 { max-width: 700px; }
 }

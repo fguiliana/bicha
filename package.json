@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "minify:css": "cleancss -o dist/style.css src/style.css",
-    "minify:js": "uglifyjs src/script.js -o dist/script.js && uglifyjs src/contact.js -o dist/contact.js",
+    "minify:js": "uglifyjs src/script.js -o dist/script.js",
     "minify:html": "node scripts/build-html.js"
   },
   "dependencies": {
