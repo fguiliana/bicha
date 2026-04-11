@@ -1,183 +1,167 @@
-/* Default style */
-section.block{
-    /* width: 100%; */
+/* Content Blocks */
+.block-title {
+    margin-bottom: 40px;
+    padding: 0 20px;
+}
+
+section.block {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
     text-align: left;
-    margin-top: 20px;
-    margin-bottom: 5vh;
-
-    /* background-color: aquamarine; */
+    margin-bottom: var(--spacing-section);
 }
 
-section.block-title{
-    margin-bottom: 5vh;
-}
-
-main.container>section.block:nth-child(odd) {
-    flex-direction: row-reverse;
-}
-
-main.container>section.block:nth-child(odd) .sub_block {
-    margin: 0 30px 0 0;
-}
-
-div.slogan {
-    text-align: center;
-    text-transform: uppercase;
-    margin: 30px 0 40px 0;
-}
-
-.block-title>div {
-    display: block;
-}
-
-div.button-devis {
-    width: fit-content;
-    margin: auto;
-    text-align: center;
-    background-color: #ff5325;
-    border-radius: 2vh;
-    padding: 8px 20px;
-    border: 1px solid #0C0A0B;
-
-}
-
-div.sub_block_img_container {
+/* Image */
+.sub_block_img_container {
     width: 100%;
-    max-width: 40%;
-    border-radius: 2vh;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    max-height: 50vh;
 }
 
-img.sub_block_img {
-    border-radius: 2vh;
+.sub_block_img_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+    border-radius: var(--radius-lg);
 }
 
-div.sub_block {
+.sub_block_img_container:hover img {
+    transform: scale(1.03);
+}
+
+/* Text */
+.sub_block {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    margin-left: 30px;
+    width: 100%;
 }
 
-div.block_content {
-    margin-bottom: 20px;
+.block_content {
+    margin-bottom: 24px;
 }
 
-div.block_content p {
-    margin-bottom: 5px;
+.block_content p {
+    margin-bottom: 12px;
 }
 
-div.button {
-    display: flex;
-    background-color: #ff5325;
-    border-radius: 2vh;
-    padding: 8px 20px;
-    border: 1px solid #0C0A0B;
+/* Styled list */
+.block_content ul {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
 }
 
-a.button-devis {
-    text-align: center;
-    font-family: 'ArchivoBlack';
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #0C0A0B;
-}
-
-a.button {
-    font-family: 'ArchivoBlack';
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #0C0A0B;
-}
-
-a.button:active {
+.block_content li {
     position: relative;
-    left: 5px;
-    top: 5px;
-    box-shadow: unset;
+    padding-left: 20px;
+    line-height: 2;
+    list-style: none;
+}
+
+.block_content li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+/* Menu section – full-bleed white from within .container */
+.menu-section {
+    background-color: var(--color-white);
+    /* Bleed out of container's 24px padding (overrides .container > section reset) */
+    margin-left: -24px;
+    margin-right: -24px;
+    margin-bottom: var(--spacing-section);
+    padding: 60px 24px;
+}
+
+.menu-section .block_content {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+    padding: 0 24px;
+}
+
+.menu-section .block_content p {
+    text-align: center;
+}
+
+.menu-section h2 {
+    padding: 0 24px;
+    text-align: center;
 }
 
 .menu-embed {
+    max-width: var(--container-max);
+    margin: 0 24px;
     overflow: hidden;
-    border-radius: 8px;
-    filter: drop-shadow(0 0 0.5rem rgb(126, 66, 24));
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 1080px) {
+    .menu-embed {
+        margin: 0 auto;
+    }
 }
 
 .iframe {
     width: 100%;
-    aspect-ratio: 21/29.7;
-        border-radius: 8px;
+    aspect-ratio: 21 / 29.7;
+    border-radius: var(--radius-lg);
+    border: none;
 }
 
-/* Breakpoints */
-/* Extra Small Devices (phones, less than 576px) */
-@media (max-width: 575.98px) {
+/* Responsive */
+@media (min-width: 768px) {
     section.block {
-        flex-direction: column!important;
-        align-items: center;
-    }
-    div.sub_block {
-        margin-left: 0px;
+        flex-direction: row;
+        gap: 40px;
     }
 
-    div.sub_block_img_container {
-        max-width: 100%;
-        max-height: 50vh;
-        overflow: hidden;
-        margin-bottom: 20px;
-    }
-}
-  
-/* Small Devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
-    section.block {
-        flex-direction: column!important;
-        align-items: center;
+    section.block:nth-child(odd) {
+        flex-direction: row-reverse;
     }
 
-    div.sub_block {
-        margin-left: 0px;
+    section.block:nth-child(odd) .sub_block {
+        margin: 0;
     }
 
-    div.sub_block_img_container {
-        max-width: 100%;
-        max-height: 40vh;
-        overflow: hidden;
-        margin-bottom: 20px;
+    .sub_block_img_container {
+        width: 45%;
+        flex-shrink: 0;
+        max-height: none;
     }
-}
-  
-/* Medium Devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    div.sub_block {
-        width: 58%;
-    }
-    div.sub_block_img_container {
-        width: 42%;
-    }
-}
-  
-/* Large Devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {
-    div.sub_block {
+
+    .sub_block {
         width: 55%;
     }
-    div.sub_block_img_container {
-        width: 45%;
+
+    .menu-section {
+        padding: 80px 24px;
     }
 }
-  
-/* Extra Large Devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-    div.sub_block {
-        width: 60%;
-    }
-    div.sub_block_img_container {
-        width: 40%;
+
+@media (min-width: 1080px) {
+    /* When container is capped at 1080px, bleed to full viewport */
+    .menu-section {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        padding-left: calc(50vw - 50% + 24px);
+        padding-right: calc(50vw - 50% + 24px);
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
