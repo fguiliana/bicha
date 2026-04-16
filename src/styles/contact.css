@@ -10,29 +10,78 @@
     text-align: center;
 }
 
+/* Étapes – numérotation auto */
 .contact-steps {
-    margin-bottom: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 36px 0 48px 0;
+    display: grid;
+    gap: 16px;
+    counter-reset: steps;
 }
 
 .contact-step {
+    counter-increment: steps;
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 32px 24px;
+    text-align: center;
+}
+
+/* Numéro éditorial */
+.contact-step::before {
+    content: "0" counter(steps);
+    display: block;
+    font-family: 'GrandBold', serif;
+    font-size: 40px;
+    color: var(--color-accent);
+    line-height: 1;
     margin-bottom: 16px;
 }
 
 .contact-step h3 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    margin: 0 0 12px;
+    padding-bottom: 12px;
+    position: relative;
+    display: inline-block;
 }
 
-.contact-step h3 svg {
-    flex-shrink: 0;
+/* Filet accent sous le titre */
+.contact-step h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 1px;
 }
 
 .contact-step p {
+    margin: 0;
+    font-size: 0.9em;
+    opacity: 0.8;
     text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    .contact-steps {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .contact-step {
+        padding: 40px 28px;
+    }
+
+    .contact-step::before {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
 }
 
 /* Form Card */

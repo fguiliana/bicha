@@ -7,7 +7,7 @@
 section.block {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     gap: 24px;
     text-align: left;
     margin-bottom: var(--spacing-section);
@@ -82,7 +82,6 @@ section.block {
     background-color: var(--color-white);
     margin-left: -24px;
     margin-right: -24px;
-    margin-bottom: var(--spacing-section);
     padding: 60px 0;
 }
 
