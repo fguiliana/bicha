@@ -80,48 +80,47 @@ section.block {
 /* Menu section – full-bleed white from within .container */
 .menu-section {
     background-color: var(--color-white);
-    /* Bleed out of container's 24px padding (overrides .container > section reset) */
     margin-left: -24px;
     margin-right: -24px;
     margin-bottom: var(--spacing-section);
-    padding: 60px 24px;
+    padding: 60px 0;
 }
 
-.menu-section .block_content {
-    max-width: 600px;
-    margin: 0 auto 40px;
-    text-align: center;
+.menu-inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
     padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.menu-section .block_content p {
+.menu-text h2 {
     text-align: center;
 }
 
-.menu-section h2 {
-    padding: 0 24px;
+.menu-text .block_content {
+    margin-bottom: 0;
+}
+
+.menu-text .block_content p {
     text-align: center;
 }
 
 .menu-embed {
-    max-width: var(--container-max);
-    margin: 0 24px;
-    overflow: hidden;
+    background: var(--color-white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-soft);
-}
-
-@media (min-width: 1080px) {
-    .menu-embed {
-        margin: 0 auto;
-    }
+    overflow: hidden;
+    /* Slight negative margin to clip iframe borders/padding from Canva */
+    line-height: 0;
 }
 
 .iframe {
     width: 100%;
-    aspect-ratio: 21 / 29.7;
-    border-radius: var(--radius-lg);
+    aspect-ratio: 1 / 1;
     border: none;
+    display: block;
 }
 
 /* Responsive */
@@ -150,18 +149,43 @@ section.block {
     }
 
     .menu-section {
-        padding: 80px 24px;
+        padding: 80px 0;
     }
 }
 
 @media (min-width: 1080px) {
-    /* When container is capped at 1080px, bleed to full viewport */
+    /* Full viewport bleed */
     .menu-section {
         margin-left: calc(50% - 50vw);
         margin-right: calc(50% - 50vw);
-        padding-left: calc(50vw - 50% + 24px);
-        padding-right: calc(50vw - 50% + 24px);
         padding-top: 80px;
         padding-bottom: 80px;
+    }
+
+    /* 2-column layout: text left, iframe right */
+    .menu-inner {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 60px;
+    }
+
+    .menu-text {
+        flex: 0 0 370px;
+        position: sticky;
+        top: 80px;
+        text-align: left;
+    }
+
+    .menu-text h2 {
+        text-align: left;
+    }
+
+    .menu-text .block_content p {
+        text-align: left;
+    }
+
+    .menu-embed {
+        flex: 1;
+        min-width: 0;
     }
 }
