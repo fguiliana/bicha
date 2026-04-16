@@ -64,6 +64,11 @@ strong {
     font-weight: 600;
 }
 
+em {
+    font-weight: 600;
+    font-style: normal;
+}
+
 /* Container */
 .container {
     max-width: var(--container-max);

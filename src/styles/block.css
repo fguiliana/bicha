@@ -79,7 +79,7 @@ section.block {
 
 /* Menu section – full-bleed white from within .container */
 .menu-section {
-    background-color: var(--color-white);
+    background-color: var(--color-bg);
     margin-left: -24px;
     margin-right: -24px;
     padding: 60px 0;
