@@ -11,8 +11,6 @@
     <meta property="og:type" content="website">
     <meta name="robots" content="noai, notdm">
     <meta name="tdm-policy" content="contact=mailto:contact@lacuisinedebicha.fr; terms=https://www.lacuisinedebicha.fr/terms.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="apple-touch-icon" sizes="180x180" href="media/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="media/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="media/favicon/favicon-16x16.png">
@@ -71,7 +69,7 @@
         <!-- Block: Histoire -->
         <section class="block">
             <div class="sub_block_img_container reveal reveal--left">
-                <img class="sub_block_img" src="./media/photo1.jpg" alt="Plat cuisiné par La Cuisine de Bicha" loading="lazy">
+                <img class="sub_block_img" src="./media/photo1.webp" alt="Plat cuisiné par La Cuisine de Bicha" loading="lazy">
             </div>
             <div class="sub_block reveal reveal--delay-2">
                 <h2>Bicha, une histoire de cuisine, de famille et de convivialité</h2>
@@ -89,7 +87,7 @@
         <!-- Block: Prestations -->
         <section class="block">
             <div class="sub_block_img_container reveal reveal--right">
-                <img class="sub_block_img" src="./media/photo2.jpg" alt="Cuisine sur place pour événements par Bicha" loading="lazy">
+                <img class="sub_block_img" src="./media/photo2.webp" alt="Cuisine sur place pour événements par Bicha" loading="lazy">
             </div>
             <div class="sub_block reveal reveal--delay-2">
                 <h2>Une cuisine conviviale pour tous vos évènements</h2>
@@ -119,7 +117,7 @@
                 </div>
             </div>
             <div class="menu-embed">
-                <iframe loading="lazy" class="iframe"
+                <iframe loading="lazy" class="iframe" name="menu proposé à jour" 
                     src="https://www.canva.com/design/DAHHAqNiRKQ/JV84XNiVcMZHoF93Mbj5SA/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
                 </iframe>
             </div>
@@ -135,12 +133,12 @@
                 </button>
                 <div class="embla">
                     <div class="embla__container">
-                        <div class="embla__slide"><img src="./media/photo1-slideshow.jpg" alt="Réalisation La Cuisine de Bicha" loading="lazy"></div>
-                        <div class="embla__slide"><img src="./media/photo2-slideshow.jpg" alt="Cuisine conviviale pour un événement" loading="lazy"></div>
-                        <div class="embla__slide"><img src="./media/photo3-slideshow.jpg" alt="Préparation maison en grande poêle" loading="lazy"></div>
-                        <div class="embla__slide"><img src="./media/photo4-slideshow.jpg" alt="Service traiteur Bicha sur place" loading="lazy"></div>
-                        <div class="embla__slide"><img src="./media/photo5-slideshow.jpg" alt="Repas convivial pour vos invités" loading="lazy"></div>
-                        <div class="embla__slide"><img src="./media/photo6-slideshow.jpg" alt="Ambiance chaleureuse autour d'un repas" loading="lazy"></div>
+                        <div class="embla__slide"><img src="./media/slideshow/photo1-slideshow.webp" alt="Réalisation La Cuisine de Bicha" loading="lazy"></div>
+                        <div class="embla__slide"><img src="./media/slideshow/photo2-slideshow.webp" alt="Cuisine conviviale pour un événement" loading="lazy"></div>
+                        <div class="embla__slide"><img src="./media/slideshow/photo3-slideshow.webp" alt="Préparation maison en grande poêle" loading="lazy"></div>
+                        <div class="embla__slide"><img src="./media/slideshow/photo4-slideshow.webp" alt="Service traiteur Bicha sur place" loading="lazy"></div>
+                        <div class="embla__slide"><img src="./media/slideshow/photo5-slideshow.webp" alt="Repas convivial pour vos invités" loading="lazy"></div>
+                        <div class="embla__slide"><img src="./media/slideshow/photo6-slideshow.webp" alt="Ambiance chaleureuse autour d'un repas" loading="lazy"></div>
                     </div>
                 </div>
                 <button class="slideshow__btn slideshow__btn--next" aria-label="Photo suivante">
@@ -170,11 +168,12 @@
             </ol>
 
             <div class="form-card">
-                <form id="contact-form" action="https://formsubmit.co/florent.guiliana@gmail.com" method="POST">
+                <form id="contact-form" action="https://formsubmit.co/lacuisinedebicha@gmail.com" method="POST">
                     <input type="hidden" name="_subject" value="Nouvelle demande de devis - La Cuisine de Bicha">
                     <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_next" value="https://www.lacuisinedebicha.fr">
+                    <input type="hidden" name="_next" value="https://www.lacuisinedebicha.fr/thanks.html">
                     <input type="text" name="_honey" style="display:none">
+                    <input type="hidden" name="_template" value="box">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="prenom">Prénom *</label>

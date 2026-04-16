@@ -1,0 +1,52 @@
+.thanks-page {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.thanks-logo {
+    width: 120px;
+    margin-bottom: 48px;
+}
+
+.thanks-check {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 32px;
+}
+
+.thanks-check svg {
+    stroke: var(--color-white);
+}
+
+.thanks-title {
+    font-family: 'GrandBold', serif;
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    color: var(--color-dark);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    text-transform: none;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.thanks-sub {
+    font-family: 'HankenGrotesk', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: var(--color-dark);
+    opacity: 0.7;
+    max-width: 380px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    text-align: center;
+}
